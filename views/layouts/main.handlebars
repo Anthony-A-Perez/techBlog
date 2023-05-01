@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awesome Tech</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+</head>
+
+<div class="wrapper">
+    <header>
+        <h1>
+            <nav class="navbar">
+                {{#if loggedIn}}
+                <a href="/" class="navbar-item">homepage</a>
+                <a href="/dashboard" class="navbar-item">dashboard</a>
+                <a href="/dashboard/create/" class="navbar-item">create post</a>
+                <button id="logout" class="button">logout</button>
+                {{else}}
+                <a href="/" class="navbar-item">homepage</a>
+                <a href="/login" class="button">login</a>
+                {{/if}}
+            </nav>
+        </h1>
+    </header>
+
+    <main>
+        {{{ body }}}
+    </main>
+
+    <footer class="footer">
+        <div>
+            <p>
+                <a href="/">homepage</a>{{#loggedIn}} |
+                <a href="/dashboard/">dashboard</a> |
+                <a href="/dashboard/create/">create new post</a>
+                {{else}}
+                | <a href="/login/">login</a>
+                {{/if}}
+            </p>
+        </div>
+    </footer>
+
+</div>
+
+{{#if loggedIn}}
+<script src="/public/js/logout.js"></script>
+{{/if}}
+
+
+</html>
