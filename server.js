@@ -24,7 +24,7 @@ const sess = {
     resave: true,
     rolling: true,
     saveUninitialized: true,
-    store: nes SequelizeStore({
+    store: new SequelizeStore({
         db: sequelize
     }),
 };

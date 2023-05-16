@@ -24,7 +24,7 @@ const postData = [
     },
     {
         title: "Password Generator seems to Work",
-        post_content: "It makes passwrds.",
+        post_content: "It makes passwords.",
         user_id: 4
     }
 ]
