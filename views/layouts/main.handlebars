@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Awesome Tech</title>
-    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <div class="wrapper">
@@ -33,7 +33,8 @@
     <footer class="footer">
         <div>
             <p>
-                <a href="/">homepage</a>{{#loggedIn}} |
+                <a href="/">homepage</a>
+                {{#if loggedIn}} |
                 <a href="/dashboard/">dashboard</a> |
                 <a href="/dashboard/create/">create new post</a>
                 {{else}}

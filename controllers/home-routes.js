@@ -29,6 +29,7 @@ Post.findAll({
 })
 .then(dbPostData => {
     const posts = dbPostData.map(post => post.get({ plain: true}));
+    // res.json(posts)
     res.render('homepage', {
         posts,
         loggedIn: req.session.loggedIn
@@ -65,14 +66,13 @@ router.get('/post/:id', (req, res) => {
         attributes: [
             'id',
             'title',
-            'created_at',
             'post_content'
         ],
         include: [
             {
             model: Comment,
             attributes: [
-                'id', 'comment_text', 'post_id', 'user_id', 'created_at'
+                'id', 'comment_text', 'post_id', 'user_id'
             ],
             include: {
                 model: User,

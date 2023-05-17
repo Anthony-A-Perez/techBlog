@@ -10,7 +10,7 @@ const github = document.querySelector('#github-signup').value.trim();
 
 if (username && email && password) {
     const response = await fetch('/api/users', {
-        method: 'post',
+        method: 'POST',
         body: JSON.stringify({
             username,
             email,
